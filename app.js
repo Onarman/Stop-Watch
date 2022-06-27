@@ -38,10 +38,21 @@ btnStart.addEventListener("click", () =>{
     run=!run;
     if(run){
         interval = setInterval(timer,10);
-        btnStart.innerHTML= `<i class="fa-solid fa-circle-pause "></i>`
+        btnStart.innerHTML= `PAUSE`
     }
     else{
         clearInterval(interval);
-        btnStart.innerHTML=`<i class="fa-solid fa-circle-play "></i>`;
+        btnStart.innerHTML=`PLAY`;
     }
+})
+
+btnRestart.addEventListener("click",() =>{
+    min = 0;
+    sec=0;
+    msec=0;
+    
+    clearInterval(interval);
+    clock.innerHTML= (`0${min}:0${sec}:0${msec}`);
+    // run = false;
+    
 })
